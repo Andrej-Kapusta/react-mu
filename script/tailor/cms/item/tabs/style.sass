@@ -1,0 +1,227 @@
+.tabset
+	display: flex
+
+
+	&.left
+		flex-direction: row
+
+		> header
+			border: none
+			border-right: 1px solid #ddd
+			border-radius: 3px 0 0 3px
+
+			> nav
+				flex-direction: column
+				padding: 15px 0
+
+				> .tab
+					right: -2px
+					padding: 0.2em 0.4em 0.2em 0.4em
+
+					&.active
+						border-right: none
+						border-radius: 5px 0  0 5px
+
+						&:before
+							top: -5px
+							right: 1px
+							border-bottom-right-radius: 5px
+							border-width: 0 1px 1px 0
+							box-shadow: 1px 1px 0 1px #ffffff
+						&:after
+							bottom: -5px
+							right: 1px
+							border-top-right-radius: 5px
+							border-width: 1px 1px 0 0
+							box-shadow: 1px -1px 0 1px #ffffff
+
+
+	&.top
+		flex-direction: column
+
+		> header > nav
+			flex-direction: row
+			padding: 0 15px
+
+			> .tab
+				top: 2px
+				padding: 0.3em 0.4em 0.3em 0.4em
+
+				&.active
+					border-bottom: none
+					border-radius: 5px 5px 0 0
+
+					&:before
+						bottom: 1px
+						left: -5px
+						border-bottom-right-radius: 5px
+						border-width: 0 1px 1px 0
+						box-shadow: 2px 2px 0 1px #ffffff
+
+					&:after
+						bottom: 1px
+						right: -5px
+						border-bottom-left-radius: 5px
+						border-width: 0 0 1px 1px
+						box-shadow: -2px 2px 0 1px #ffffff
+
+	> header
+		padding: 0
+		position: relative
+		> nav
+			display: flex
+
+			> .tab
+				position: relative
+				border: 1px solid transparent
+
+				> button
+					width: 100%
+					text-align: left
+					> .bx_icon
+						margin-right: 0.25em
+						font-size: 1.5em
+
+				&.active
+					border-color: #ddd
+					background-color: white
+
+					&:before, &:after
+						content: ""
+						position: absolute
+						width: 5px
+						height: 5px
+						border: 1px solid #dddddd
+						z-index: 1
+
+
+/* Colors */
+
+$blueTabActive: #b2c2d1
+$tabBlueActiveShadowGradientTo: #fbfcfd
+
+$violetTabActive: #a5b8ca
+$tabVioletActiveShadowGradientTo: #fcfcfd
+
+$limeTabActive: #c3db97
+$tabLimeActiveShadowGradientTo: #f5f9ee
+
+$teaTabActive: #f1c691
+$tabTeaActiveShadowGradientTo: #fefcf9
+
+
+
+
+
+$tabActiveGradientFrom: white
+
+.blue, .violet, .lime, .tea
+	.tabset
+		> header > nav > .tab
+			&.active, &.active:after, &.active:before
+				border-color: $blueTabActive
+
+		&.top > header > nav > .tab.active
+			background: linear-gradient($tabActiveGradientFrom, $tabBlueActiveShadowGradientTo)
+
+			&:before
+				box-shadow: 2px 2px 0 1px $tabBlueActiveShadowGradientTo
+			&:after
+				box-shadow: -2px 2px 0 1px $tabBlueActiveShadowGradientTo
+
+		&.left > header > nav > .tab.active
+			background: linear-gradient(90deg, $tabActiveGradientFrom, $tabBlueActiveShadowGradientTo)
+
+			&:before
+				box-shadow: 1px 1px 0 1px $tabBlueActiveShadowGradientTo
+			&:after
+				box-shadow: 1px -1px 0 1px $tabBlueActiveShadowGradientTo
+
+
+.violet
+	.tabset
+		> header > nav > .tab
+			&.active, &.active:after, &.active:before
+				border-color: $violetTabActive
+
+		&.top > header > nav > .tab.active
+			background: linear-gradient($tabActiveGradientFrom, $tabVioletActiveShadowGradientTo)
+
+			&:before
+				box-shadow: 2px 2px 0 1px $tabVioletActiveShadowGradientTo
+			&:after
+				box-shadow: -2px 2px 0 1px $tabVioletActiveShadowGradientTo
+
+		&.left > header > nav > .tab.active
+			background: linear-gradient(90deg, $tabActiveGradientFrom, $tabVioletActiveShadowGradientTo)
+
+			&:before
+				box-shadow: 1px 1px 0 1px $tabVioletActiveShadowGradientTo
+			&:after
+				box-shadow: 1px -1px 0 1px $tabVioletActiveShadowGradientTo
+
+
+.lime
+	.tabset
+		> header > nav > .tab
+			&.active, &.active:after, &.active:before
+				border-color: $limeTabActive
+		&.top > header > nav > .tab.active
+			background: linear-gradient($tabActiveGradientFrom, $tabLimeActiveShadowGradientTo)
+
+			&:before
+				box-shadow: 2px 2px 0 1px $tabLimeActiveShadowGradientTo
+			&:after
+				box-shadow: -2px 2px 0 1px $tabLimeActiveShadowGradientTo
+
+		&.left > header > nav > .tab.active
+			background: linear-gradient(90deg, $tabActiveGradientFrom, $tabLimeActiveShadowGradientTo)
+
+			&:before
+				box-shadow: 1px 1px 0 1px $tabLimeActiveShadowGradientTo
+			&:after
+				box-shadow: 1px -1px 0 1px $tabLimeActiveShadowGradientTo
+
+.tea
+	.tabset
+		> header > nav > .tab
+			&.active, &.active:after, &.active:before
+				border-color: $teaTabActive
+		&.top > header > nav > .tab.active
+			background: linear-gradient($tabActiveGradientFrom, $tabTeaActiveShadowGradientTo)
+
+			&:before
+				box-shadow: 2px 2px 0 1px $tabTeaActiveShadowGradientTo
+			&:after
+				box-shadow: -2px 2px 0 1px $tabTeaActiveShadowGradientTo
+
+		&.left > header > nav > .tab.active
+			background: linear-gradient(90deg, $tabActiveGradientFrom, $tabTeaActiveShadowGradientTo)
+
+			&:before
+				box-shadow: 1px 1px 0 1px $tabTeaActiveShadowGradientTo
+			&:after
+				box-shadow: 1px -1px 0 1px $tabTeaActiveShadowGradientTo
+
+// scroll shadow
+.tabset.top
+	> header
+		&:after
+			content: ""
+			position: absolute
+			left: 0
+			bottom: -9px
+			right: 0
+			height: 8px
+			background: linear-gradient(rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0))
+			z-index: 3
+			transition: opacity 250ms
+			opacity: 0
+		&.scrolled
+			&:after
+				opacity: 1
+
+.tab-active
+	flex: 1
+	flex-wrap: wrap
+	flex-direction: column

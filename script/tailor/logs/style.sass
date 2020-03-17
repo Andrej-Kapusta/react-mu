@@ -1,0 +1,338 @@
+#logs
+	position: fixed
+	top: 100%
+	transition: all 0.3s
+	overflow: auto
+	bottom: 0
+	left: 0
+	right: 0
+	will-change: transform
+	opacity: 0
+	z-index: 100
+	&.visible
+		opacity: 1
+		top: 0
+
+
+#core-statistics
+	position: fixed
+	bottom: 0.3em
+	right: 0.3em
+	background-color: #EFEFEF
+	border-radius: 1em
+	padding: 0.5em
+	font-size: xx-small
+	z-index: 1000
+	box-shadow: 0px 0px 3px 0px black
+	color: #7d7d7d
+	&:empty
+		display: none
+	td
+		text-align: center
+
+div#bloxPageLog
+	position: relative
+	left: 0px
+	bottom: -1px
+	transition: height 0.5s
+	border-top-style: solid
+	border-top-width: 1px
+	border-top-color: #999
+	right: 0
+	font-family: sans-serif
+	background-color: #ccc
+	font-size: 12px
+
+	.inner
+		overflow: auto
+		height: 100%
+		padding-right: 10px
+		padding-bottom: 20px
+
+		> br
+			display: none
+
+	table
+		border-color: transparent
+		border-width: 0px
+		width: 100%
+		background-color: transparent
+		border-spacing: 0px
+		border-collapse: separate
+
+		&.bx_log_table
+			&.stats
+			float: left
+			width: auto
+
+			&.performance
+				float: right
+				width: auto
+
+			&.child1
+				td:first-child
+					display: none
+
+	a
+		color: black
+		text-decoration: underline
+
+
+
+
+	.bx_log_label
+		border-style: solid
+		border-width: 1px
+		top: -39px
+		position: absolute
+		display: block
+		margin: 0 auto
+		border-radius: 5px 5px 0 0
+		background-color: #ccc
+		border-color: #999
+		border-bottom: none
+		text-align: center
+		z-index: 1
+		left: 50%
+		margin-left: -150px
+		margin-right: -150px
+		width: 300px
+		cursor: pointer
+
+
+	.badges
+		position: absolute
+		top: -15px
+		right: -9px
+		left: 0
+		text-align: right
+
+	.badge
+		display: inline-block
+		min-width: 10px
+		padding: 2px 5px 2px 5px
+		font-size: 12px
+		font-weight: 700
+		line-height: 1.4
+		color: #fff
+		text-align: center
+		white-space: nowrap
+		vertical-align: baseline
+		background-color: #777
+		border-radius: 12px
+		border: 2px solid white
+		box-shadow: 1px 1px 2px rgba(0,0,0,0.5)
+		margin-left: 3px
+
+	div#bloxErrorCount
+		background-color: #CF1D27
+
+
+	div#bloxWarningCount
+		background-color: #FF8F35
+
+
+	div#bloxLogCount
+		background-color: #555
+
+	.bx_log_label
+		display: none !important
+
+	.bx_log_table
+		padding: 10px
+		float: left
+		border-radius: 6px
+		box-shadow: 1px 1px 5px rgba(0,0,0,0.2),1px 1px 4px rgba(255,255,255,0.3) inset
+		background-color: rgba(255,255,255,0.2)
+		color: #000
+		margin: 1px
+		overflow: auto
+		max-width: 100%
+
+	.pull-left
+		float: left
+
+		.bx_log_table
+			float: none
+
+			&+hr
+				clear: left
+				border: none
+				height: 0px
+				margin: 0
+
+	.console
+		background-color: #eaeaea
+		font-family: Courier,Menlo,monospace
+		font-size: 14px
+		white-space: nowrap
+		float: none
+		color: black
+
+
+
+	tr
+		background-color: rgba(255,255,255, 0.43)
+		color: black
+		font-size: 100%
+		display: table-row
+
+		&.get td
+			background-color: rgba(100, 255, 0, 0.2)
+
+		&.put td
+			background-color: rgba(10, 100, 255, 0.12)
+
+		&.hasmap td
+			background-color: rgba(155, 10, 155, 0.0980392)
+
+		&.module td
+			background-color: rgba(255, 200, 15, 0.2)
+
+		&.operation td
+			background-color: rgba(10, 255, 100, 0.2)
+
+		&.title
+			background-color: transparent
+
+			th, td
+				border-bottom: 10px solid transparent
+				text-align: left
+
+		&.label
+		display: table-row
+		color: black
+		text-align: left
+		font-size: inherit
+		padding: 0
+
+	td
+		padding: 2px 5px
+		border-bottom: 1px solid rgba(0, 0, 0, 0.0980392)
+
+	.bx_log_table
+		tr:last-child td
+			border-bottom-color: rgba(255,255,255, 0.2)
+		tr td:first-child
+			border-left: 1px solid rgba(0, 0, 0, 0.2)
+		tr td:last-child
+			border-right: 1px solid rgba(255,255,255, 0.2)
+
+		&.memory
+			tr:first-child td
+				font-weight: bold
+
+			tr:nth-child(5), tr:nth-child(6)
+				background-color: rgba(100, 255, 0, 0.2)
+
+			tr:nth-child(2) td
+				border-top: 1px solid rgba(0, 0, 0, 0.2)
+
+		&.summary
+			tr:nth-child(2) td
+				border-top: inherit
+
+			tr:nth-child(1) td
+				border-top: 1px solid rgba(0, 0, 0, 0.2)
+
+
+		&.performance
+			tr.agent td:first-child
+				background-color: rgba(100, 255, 0, 0.2)
+
+			tr.blox td:first-child
+				background-color:rgba(10, 100, 255, 0.15)
+
+			tr.core td:first-child
+				background-color: rgba(155, 10, 155, 0.1)
+
+			tr.java td:first-child
+				background-color: rgba(10, 255, 100, 0.2)
+
+
+			td:first-child
+				border-right: 1px solid rgba(255,255,255, 0.2)
+
+			tr.summary td:first-child, tr.label td:first-child
+				border-right: none
+				text-align: left
+
+			tr.summary td
+				background-color: rgba(100, 255, 0, 0.2)
+				text-align: right
+
+
+			td
+				&:nth-child(3)
+					background-color: rgba(155, 10, 155, 0.1)
+					text-align: right
+
+				&:nth-child(4)
+					background-color: rgba(10, 100, 255, 0.15)
+					text-align: right
+
+				&:nth-child(5)
+					background-color: rgba(10, 100, 255, 0.25)
+					text-align: right
+
+				&:nth-child(6)
+					background-color: rgba(255, 200, 15, 0.2)
+					text-align: right
+
+				&:nth-child(7)
+					background-color: rgba(255, 200, 15, 0.4)
+					text-align: right
+
+			tr.label td
+				background-color: rgba(255,255,255,0.43)
+
+	.gauge
+		width: 64px
+		position: relative
+		overflow: hidden
+		padding-left: 6px
+		top: 3px
+
+		&.right
+			float: right
+		&.left
+			float: left
+			width: 70px
+
+	span.bx_gauge_label
+		position: absolute
+		bottom: 12px
+		left: 6px
+		right: 0
+		text-align: center
+		font-size: 9px
+		display: block
+		color: black
+
+		b
+			font-weight: normal
+			background-color: rgba(255,255,255,0.7)
+			padding: 0 2px
+			display: inline-block
+
+	span.bx_gauge_label.alt, .gauge.left:hover span.bx_gauge_label
+		display: none
+		bottom: 3px
+
+	.gauge.left:hover span.bx_gauge_label.alt
+		display: block
+
+	&.fixed
+		position: fixed
+		z-index: 6
+
+		> .inner
+			height: 0px
+			padding: 0
+
+
+@import "variables"
+
+#core-statistics
+	@include tablet
+		display: none

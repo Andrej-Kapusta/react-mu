@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg id="stazovatel-anim" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1000px" height="1000px" viewBox="0 0 1000 1000" style="enable-background:new 0 0 1000 1000;" xml:space="preserve">
+<style type="text/css">
+<![CDATA[
+	.customer{fill:#FF7874;transform-origin:500px 400px;   mix-blend-mode: multiply;transition:transform 0.4s ease-out;}
+	#stazovatel-anim:hover .customer{transform:translate(0,90px);}
+	#stazovatel-anim:hover .supplier{transform:translate(0,-90px);}
+	.supplier{fill:#67F4FF;transform-origin:500px 600px;   mix-blend-mode: multiply;transition:transform 0.4s ease-out;}
+
+]]>
+</style>
+
+<path id="customer" class="customer" d="M794.444,336.091c0-143.429-92.245-218.23-315.482-218.23
+	c-151.068,0-273.538,52.554-273.538,204.032c0,173.897,142.043,204.038,273.538,204.038c131.502,0,117.107,94.974-9.373,171.685
+	C709.718,611.203,794.444,483.591,794.444,336.091"/>
+<path id="supplier" class="supplier" d="M732.216,527.022c-53.593-43.552-134.268-53.903-211.316-53.903
+	c-131.495,0-117.1-94.969,9.375-171.687c-128.327,46.181-212.277,104.134-262.628,170.596
+	c-43.865,57.899-62.229,122.257-62.229,190.929c0,143.436,92.253,218.236,315.482,218.236c151.077,0,273.539-52.561,273.539-204.031
+	C794.438,605.156,770.091,557.801,732.216,527.022z"/>  
+
+ </svg>

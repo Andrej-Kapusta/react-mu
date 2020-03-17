@@ -1,0 +1,22 @@
+{
+    "presets": [
+        "react",
+        ["env", {
+            "targets": {
+                "browsers": [">0.25%", "not ie 11", "not op_mini all"]
+            },
+            "modules": false,
+            "useBuiltIns": true
+        }]
+    ],
+    "plugins": [
+        "react-hot-loader/babel",
+        "transform-class-properties",
+        "dynamic-import-webpack",
+        ["transform-object-rest-spread",
+            {
+                "useBuiltIns": true
+            }
+        ]
+    ]
+}

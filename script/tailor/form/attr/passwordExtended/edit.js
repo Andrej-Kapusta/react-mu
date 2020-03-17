@@ -1,0 +1,1 @@
+export { default } from "tailor/form/attr/password/edit"

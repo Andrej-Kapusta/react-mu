@@ -1,0 +1,46 @@
+.autocomplete-container
+    display: flex
+    flex-direction: column
+
+    .autocomplete-suggestions
+        height: 0
+        z-index: 100
+
+        .autocomplete-list
+            min-width: 160px
+            margin-top: 2px
+            padding: 5px 0
+            background-color: #ffffff
+            border: 1px solid rgba(0, 0, 0, 0.15)
+            border-radius: 4px
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175)
+            background-clip: padding-box
+
+            .autocomplete-item
+                display: flex
+                align-items: center
+                padding: 3px 20px
+                cursor: pointer
+                &:hover, &.selected
+                    color: #fff
+                    background-color: #428bca
+
+                img
+                    width: 1.5em
+                    height: 1.5em
+                    margin-right: 0.8em
+                    object-fit: contain
+                    // image-rendering: -webkit-optimize-contrast
+
+                .autocomplete-item-label
+                    span.highlight
+                        font-weight: bolder
+
+@import "variables"
+
+.autocomplete-container 
+	.autocomplete-suggestions 
+		.autocomplete-list 
+			.autocomplete-item:hover,
+			.autocomplete-item.selected
+				background-color: $brand-primary

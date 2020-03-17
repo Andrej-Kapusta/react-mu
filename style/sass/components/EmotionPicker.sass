@@ -1,0 +1,36 @@
+@import "../variables"
+
+.EmoticonPicker
+	.btn-group
+		margin: 0
+		display: block
+		max-height: 
+		.btn
+			position: relative
+			transition: transform .25s cubic-bezier(0.175, 0.885, 0.32, 1.275)
+			border: none
+			box-shadow: none
+			filter: grayscale(100%)
+			border-radius: 5px !important
+			margin: 0.5em 0.5em
+			white-space: pre-wrap
+			opacity: 0.8
+			will-change: transform, opacity
+
+			&:hover
+				background-color: transparent
+				box-shadow: 0 0 0px 1px $bg-color-light
+				filter: none
+				&.active
+					box-shadow: none
+
+			&.active
+				transform: scale(1.15)
+				opacity: 1
+				filter: none
+				background-color: lighten($bg-color-light, 5%)
+
+	&.noLabel
+		.btn-group
+			display: flex
+			justify-content: center

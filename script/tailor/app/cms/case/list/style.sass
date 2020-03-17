@@ -1,0 +1,86 @@
+@import "variables"
+
+.case-list
+    display: flex
+    flex-flow: row wrap
+    .case-list-row
+        position: relative
+        border: 1px solid $bg-color-medium
+        margin: 0 5px 15px
+        border-radius: 5px
+        flex: 0 1 calc(50% - 12px)
+        //overflow: hidden
+        display: flex
+        @include tablet
+            flex-basis: 100%
+        &:hover
+            background-color: #f0f0f0
+        >div
+            display: flex
+            flex-direction: row
+            flex: 1
+            align-content: center
+            box-shadow: 2px 2px 7px 0px rgb(232, 232, 232)
+            &.closed
+                opacity: 0.4
+                filter: grayscale(100%)
+            &.userReply
+                .status
+                    color: $brand-primary
+
+            section.image
+                align-self: center
+                min-width: 100px
+                flex: 0
+                img
+                    max-width: 100px
+                    display: block
+                    border-radius: 5px
+                    margin: 5px
+                    @include tablet
+                        max-width: 80px
+            section.details
+                margin: 1em
+                flex: 1
+                .company
+                .subject
+                    font-size: 1.5em
+                    line-height: 1em
+                    margin-bottom: 0.25em
+                    margin-top: 0.2em
+                    @include tablet
+                        font-size: 1em
+                .issueDate
+                    font-size: 80%
+                .status
+                    font-size: 50%
+                    text-transform: uppercase
+                    position: absolute
+                    right: 0
+                    top: 0
+                    padding: 3px
+                    padding-bottom: 2px
+                    border-bottom-left-radius: 5px
+                    letter-spacing: 1px
+                    border: 1px solid $bg-color-medium
+                    border-top: none
+                    border-right: none
+                .number
+                    font-size: 80%
+                    .hash
+                        width: 1em
+                        display: inline-block
+                        text-align: center
+        button
+            position: absolute
+            top: 0
+            left: 0
+            bottom: 0
+            right: 0
+            height: 100%
+            width: 100%
+            z-index: 100
+            i
+                display: none
+    .picker-line
+        width: 100%

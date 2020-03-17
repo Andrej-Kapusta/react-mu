@@ -1,0 +1,153 @@
+.tree
+	display: flex
+	width: 100%
+	flex-direction: column
+
+.tree-node
+	display: flex
+	flex-direction: column
+	> .tree-node-header
+		display: inline-flex
+		outline: none
+		button.expander
+			padding: 0
+		.bx_expander
+			font-size: 1.5em
+			transition: transform 0.15s
+			transform: translate(0px,-3px)
+			&:before
+				content: "\E874"
+				color: lightgray
+			&.empty
+				visibility: hidden
+			&.expanded
+				transform: translate(2px) rotate(90deg)
+
+		> .tree-node-header-label
+			white-space: nowrap
+			display: inline-flex
+			align-items: center
+			padding: 0 0.2em
+			margin-left: -0.2em
+			outline: none
+
+			button.icon
+				padding: 0
+				margin: 0 0.1em
+			span.key
+				font-weight: bold !important
+			span.separator:not(:empty)
+				margin: 0 0.1em
+				visibility: hidden
+			span.name
+				opacity: 0.8
+			.tree-node-button-root
+				opacity: 0
+				// transition: opacity 0.1s
+			&:hover, &.selected
+				.tree-node-button-root
+					opacity: 1
+			&.selected
+				box-shadow: 0 0 2px rgba(0,0,0,0.5) inset
+				border-radius: 5px
+				background-color: hsla(209, 26%, 50%, 1)
+				padding: 0 0.2em
+
+				color: #fdfdfd
+
+	> .tree-node-items
+		padding-left: 1.5em
+		position: relative
+	> .tree-node-form-root
+		background-color: white
+		padding: 0.5em
+		margin: 0.5em
+		border-radius: 5px
+		box-shadow: 0 0 5px rgba(0,0,0,0.5)
+
+.tree-node[data-focused="true"]
+	> .tree-node-header > .tree-node-header-label
+		box-shadow: 0 0 2px rgba(50,50,50,0.5) inset
+		border-radius: 5px
+		background-color: rgba(100,100,100, 0.3)
+		
+		.tree-node-button-root
+			opacity: 1
+
+// guiding lines
+$guiding-line-color: #ececec
+.tree .tree-node-items > .tree-node
+	position: relative
+	&:before, &:after
+		content: ""
+		position: absolute
+		z-index: -1
+		opacity: 0.5
+		transition: opacity 0.5s
+	&:before
+		border-top: 1px solid $guiding-line-color
+		width: 0.8em
+		left: 0.6em
+		top: 0.8em
+	&:after
+		border-left: 1px solid $guiding-line-color
+		top: 0
+		bottom: 0
+		left: 0.6em
+	&:only-child:after
+		height: 0.6em
+	&:only-child:before
+
+	&:first-child:after
+		top: 0
+	&:last-child:after
+		height: 0.8em
+
+.tree
+	&:hover
+		.tree-node-items > .tree-node
+			&:before, &:after
+				opacity: 1
+
+// drag'n'drop
+.dragSource
+	opacity: 0.2
+
+.dropTarget
+	&.tree-node-header
+		position: relative
+	.tree-node-header-label:before
+		content: ""
+		position: absolute
+		width: 100%
+		height: 1px
+		border-bottom: 1px solid red//#a9a9a9
+	&.after
+		.tree-node-header-label:before
+			bottom: 0
+	&.before
+		.tree-node-header-label:before
+			top: 0
+	&.inside
+		.tree-node-header-label:before
+			bottom: 0
+			left: 10%
+
+// path
+
+ol.path, ol.path-successors
+  padding: 0
+  display: inline-flex
+ol.path
+  li
+    display: inline-flex
+    flex-wrap: wrap
+    line-height: 30px
+    list-style-type: none
+    span.path-separator
+      color: lightgray
+      margin: 0 3px
+    span.path-link > button
+      margin: -4px 0
+  ol
+    padding: 0

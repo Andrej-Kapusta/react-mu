@@ -1,0 +1,47 @@
+.multiUpload
+  position: relative
+  .dropZone
+    display: none
+    &.active
+      min-height: 3em
+      display: flex
+      align-items: center
+      justify-content: center
+      position: absolute
+      top: 0
+      left: 0
+      right: 0
+      bottom: 0
+      background-color: #eee
+      opacity: 0.95
+      border-radius: 5px
+      border: 2px dashed #aaa
+      z-index: 50
+      color: #aaa
+      font-size: 1.5em
+  .file-list
+    .file
+      display: flex
+      margin: 0.2em 0
+      .fileLabel
+        display: flex
+        flex-direction: row
+        align-items: center
+        margin-right: 0.3em
+        .size
+          font-size: small
+          white-space: nowrap
+          margin-left: 0.3em
+      input[type="file"]
+        border: 3px solid red
+        width: 0.1px
+        height: 0.1px
+        opacity: 0
+        overflow: hidden
+        position: absolute
+        z-index: -1
+
+  ul.file-list
+    padding-left: 1.3em
+    li.file
+      display: list-item

@@ -1,0 +1,51 @@
+@import "variables"
+
+.steps
+	display: flex
+	flex-direction: row
+	margin: 3em auto
+	@include tablet
+		width: 100%
+		margin: 2em auto
+	.step
+		flex: 1
+		text-align: center
+		position: relative
+		margin-top: 2.7em
+		font-size: 100%
+		font-weight: 200
+		color: $bg-color-medium 
+		transition: color .5s
+		&:before
+			left: 50%
+			width: 100%
+			background-color: lighten($bg-color-medium,10%)
+			content: ""
+			height: 3px
+			position: absolute
+			background: gainsboro
+			top: -1.5em
+			right: -4vw
+			border-radius: 5px
+		&:after
+			background-color: white
+			border-color: lighten($bg-color-medium,10%)
+			content: ""
+			position: absolute
+			left: calc(50% - 1em)
+			top: -2.4em
+			height: 2em
+			width: 2em
+			border-radius: 1em
+			border: 3px solid gainsboro
+			transition: border .5s
+		&:last-child
+			&:before
+				content: none
+		&.active
+			font-weight: normal
+			color: black
+			&:after
+				border: 0.5em solid darken(#60dfe5, 10%)
+				border-color: $brand-secondary
+				background-color: $brand-primary
