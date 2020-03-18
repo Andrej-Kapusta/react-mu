@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <title>%%title%%</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    %%meta%%
+    <link rel="icon" href="%%publicAssetsPrefix%%/image/favicon.png?v=23" type="image/x-icon" />
+    <script type="application/json" id="configuration">%%configuration%%</script>
+    <script type="application/json" id="initialTailorTree">%%tailorTree%%</script>
+    <base href="%%publicAssetsPrefix%%/" />
+    <style>
+        #initScreen{
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-color: #677374;
+            background-image: url("%%publicAssetsPrefix%%/image/stazovatel-anim.svg");
+            background-position: 50% 50%;
+            background-repeat: no-repeat;
+            background-size: 25%;
+            z-index: 100000;
+        }
+    </style>
+</head>
+<body>
+    <div id="FlatCircle">
+        <div id="initScreen"></div>
+    </div>
+    <div id="deathScreen" class="faded">
+        <img src="%%publicAssetsPrefix%%/image/CrossBones.png" />
+        <div class="message">{message}</div>
+        <div class="info">Click to dismiss.</div>
+    </div>
+</body>
+</html>
